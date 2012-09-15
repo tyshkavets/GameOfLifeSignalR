@@ -39,11 +39,11 @@
             bContext.fillStyle = "rgb(255,255,255)";
             for (var i = 0; i < state.Dead.length; i++)
             {
-                bContext.fillRect(state.Dead[i].X * 5, state.Dead[i].Y * 5, 5, 5);
+                bContext.fillRect(state.Dead[i].X * 10, state.Dead[i].Y * 10, 10, 10);
             }
-            bContext.fillStyle = "rgb(0,0,0)";
+            bContext.fillStyle = "rgb(0,0,255)";
             for (i = 0; i < state.Born.length; i++) {
-                bContext.fillRect(state.Born[i].X * 5, state.Born[i].Y * 5, 5, 5);
+                bContext.fillRect(state.Born[i].X * 10, state.Born[i].Y * 10, 10, 10);
             }            
         };
 
@@ -79,12 +79,12 @@
             var bCanvas = document.getElementById("gameCanvas");
             var bContext = bCanvas.getContext("2d");
             if (color == 1) {
-                bContext.fillStyle = "rgb(0,0,0)";
+                bContext.fillStyle = "rgb(0,0,255)";
             }
             else {
                 bContext.fillStyle = "rgb(255,255,255)";
             }            
-            bContext.fillRect(x*5, y*5, 5, 5);
+            bContext.fillRect(x*10, y*10, 10, 10);
         };
 
         $.connection.hub.start();
@@ -103,8 +103,8 @@
         });
 
         $('#gameCanvas').click(function (e) {
-            var x = Math.floor((e.pageX - $("#gameCanvas").offset().left) / 5);
-            var y = Math.floor((e.pageY - $("#gameCanvas").offset().top) / 5);
+            var x = Math.floor((e.pageX - $("#gameCanvas").offset().left) / 10);
+            var y = Math.floor((e.pageY - $("#gameCanvas").offset().top) / 10);
             var point = {};
             point.X = x;
             point.Y = y;

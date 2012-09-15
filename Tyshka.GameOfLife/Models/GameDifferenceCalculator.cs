@@ -7,9 +7,9 @@ namespace Tyshka.GameOfLife.Models
         public static GameDifference GetGameDifference(GameGeneration old, GameGeneration current, int index)
         {
             var result = new GameDifference {Dead = new List<Point>(), Born = new List<Point>()};
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
-                for (int j = 0; j < 100; j++)
+                for (int j = 0; j < 50; j++)
                 {
                     if (old.Cells[i, j] == true && current.Cells[i, j] == false)
                     {
@@ -32,9 +32,9 @@ namespace Tyshka.GameOfLife.Models
         {
             var newGeneration = new GameGeneration();
 
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 50; i++)
             {
-                for (int j = 0; j < 100; j++)
+                for (int j = 0; j < 50; j++)
                 {
                     var neighboursCount = CalculateNeighboursCount(previous, i, j);
 
@@ -66,7 +66,7 @@ namespace Tyshka.GameOfLife.Models
                 count++;
             }
 
-            if (x > 0 && y < 99 && previous.Cells[x - 1, y + 1])
+            if (x > 0 && y < 49 && previous.Cells[x - 1, y + 1])
             {
                 count++;
             }
@@ -76,22 +76,22 @@ namespace Tyshka.GameOfLife.Models
                 count++;
             }
 
-            if (y < 99 && previous.Cells[x, y + 1])
+            if (y < 49 && previous.Cells[x, y + 1])
             {
                 count++;
             }
 
-            if (x < 99 && y > 0 && previous.Cells[x + 1, y - 1])
+            if (x < 49 && y > 0 && previous.Cells[x + 1, y - 1])
             {
                 count++;
             }
 
-            if (x < 99 && previous.Cells[x + 1, y])
+            if (x < 49 && previous.Cells[x + 1, y])
             {
                 count++;
             }
 
-            if (x < 99 && y < 99 && previous.Cells[x + 1, y + 1])
+            if (x < 49 && y < 49 && previous.Cells[x + 1, y + 1])
             {
                 count++;
             }

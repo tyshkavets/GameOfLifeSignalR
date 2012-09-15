@@ -4,6 +4,6 @@ namespace Tyshka.GameOfLife.Models
 {
     public class GameGeneration
     {
-        public Boolean[,] Cells = new Boolean[100,100];
+        public Boolean[,] Cells = new Boolean[50,50];
     }
 }
